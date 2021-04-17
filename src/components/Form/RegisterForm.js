@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 
-import './Form.scss';
+// import './Form.scss';
 import Images from '../../themes/Images';
 // import RegisterTypes from '../../redux/RegisterRedux/actions';
 import {

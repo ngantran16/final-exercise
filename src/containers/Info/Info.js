@@ -44,7 +44,7 @@ const Info = () => {
                             'form-group': true,
                             'has-error': formik.touched.name && formik.errors.name
                             })}>
-                                <div className ="phone-input">
+                                <div className ="name-input">
                                     <input
                                         type="text"
                                         id="name"
