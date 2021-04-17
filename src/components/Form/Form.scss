@@ -1,0 +1,41 @@
+.form-control {
+    height: 30px;
+    width: 285px;
+    padding: 9px 0 7px 8px;
+    border: none;
+    color: #262626;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.help-block {
+    color: #ff4500;
+    font-size: 12px;
+}
+
+.has-error .form-control {
+    outline: none;
+    box-shadow: none !important;
+    transition: none;
+    border-color: #ff4500 !important;
+}
+
+.checkbox-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+.radius-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: 1px solid gray;
+}
+
+.submit-button {
+    display: flex;
+    justify-content: flex-end;
+}
