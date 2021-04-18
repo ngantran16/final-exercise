@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
-import './Form.scss';
+import { useSelector } from 'react-redux';
 
 import Images from '../../themes/Images';
+import './Form.scss';
 
 const ConfirmForm = () => {
     const [num1, setNum1] = useState('');
     const [num2, setNum2] = useState('');
     const [num3, setNum3] = useState('');
     const [num4, setNum4] = useState('');
+
+    const response = useSelector((state) => state.register.response);
+    response && console.log('1111111111111' + response.otp);
+
+    const onSubmitOtp = () => {
+        const otp = num1 + num2 + num3 + num4;
+        console.log(response);
+        if (response && (response.otp === otp)) {
+            alert('Register successfull!');
+        } else {
+            alert('The OTP not match!');
+        }
+    }
 
     return (
         <form>
@@ -22,7 +36,7 @@ const ConfirmForm = () => {
                 <div>
                     <a href="reactjs.org" className="request-link">I didn't receive code</a>
                 </div>
-                <button className="radius-button">
+                <button onClick = {onSubmitOtp} className="radius-button">
                     <img src={Images.arrow} alt="arrow-img" />
                 </button>
             </div>

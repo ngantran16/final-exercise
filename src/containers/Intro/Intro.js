@@ -1,18 +1,12 @@
 import React from 'react';
-import Popup from 'reactjs-popup';
  
 import './Intro.scss';
-import 'reactjs-popup/dist/index.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Images from '../../themes/Images';
 import Button from '../../components/Button/Button';
 
 const Intro  = () => {
-    const options = [
-        'one', 'two', 'three'
-      ];
-      const defaultOption = options[0];
     return (
         <div>
             <Header />

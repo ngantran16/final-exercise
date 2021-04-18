@@ -1,12 +1,11 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import './Form.scss';
 import Images from '../../themes/Images';
-// import RegisterTypes from '../../redux/RegisterRedux/actions';
+import RegisterTypes from '../../redux/RegisterRedux/actions';
 import {
     validationRules,
     validateValuesByRule
@@ -15,7 +14,8 @@ import {
   
 
 const RegisterForm = () => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const history = useHistory();
     const formik = useFormik({
         initialValues: {
           phone: '',
@@ -27,7 +27,8 @@ const RegisterForm = () => {
         },
         onSubmit: (values, actions) => {
           console.log(values);
-          // dispatch(RegisterTypes.userRegister(values));
+          dispatch(RegisterTypes.userRegister(values));
+          // history.push('/information');
         }
       });
 
@@ -65,7 +66,6 @@ const RegisterForm = () => {
             </div>
 
             <div className="submit-button">
-              <Link to={tableRoutes.information}>
                 <button 
                     type="submit"
                     // disabled={!formik.isValid || formik.isSubmitting}
@@ -73,7 +73,6 @@ const RegisterForm = () => {
                 >
                     <img src={Images.arrow} alt="arrow-img" />
                 </button>
-              </Link>
             </div>
         </form>
 

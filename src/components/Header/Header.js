@@ -1,7 +1,8 @@
 import React from 'react';
 import Images from '../../themes/Images';
 import './Header.scss';
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUserCircle, FaCartPlus, FaStar, FaBell } from "react-icons/fa";
+import { MdSettings } from "react-icons/md";
 
 const Header = () => {
     return (
@@ -11,16 +12,15 @@ const Header = () => {
                 <div> Uberbd </div>
             </div>
             <div>
-                <div class="dropdown">
+                <div className="dropdown">
                     <img src={ Images.menuIcon } alt="menu-icon" className="menu-icon" />
-                    <div class="dropdown-content">
-                    <FaHome /><a href="#">Home</a>
-                    <a href="#">Profile</a>
-                    <a href="#">Your Book</a>
-                    <a href="#">Favourites</a>
-                    <a href="#">Your Book</a>
-                    <a href="#">Notifications</a>
-                    <a href="#">Setting</a>
+                    <div className="dropdown-content">
+                        <a href="reactjs.org"><FaHome color="#888888" /><span>Home</span></a>
+                        <a href="reactjs.org"><FaUserCircle color="#888888" /><span>Profile</span></a>
+                        <a href="reactjs.org"><FaCartPlus color="#888888" /><span>Your Book</span></a>
+                        <a href="reactjs.org"><FaStar color="#888888" /><span>Favourites</span></a>
+                        <a href="reactjs.org"><FaBell color="#888888" /><span>Notifications</span></a>
+                        <a href="reactjs.org"><MdSettings color="#888888" /><span>Setting</span></a>
                     </div>
                 </div>
             </div>
