@@ -4,6 +4,8 @@ export const validateRequired = (value) => !!value;
 
 export const validatePhoneNumber = (value) => phoneRegExp.test(value);
 
+export const validateSelected = (value) => value !== '';
+
 export const validationRules = {
 required: [
     {
@@ -17,7 +19,15 @@ phoneNumber: [
     validator: validatePhoneNumber,
     message: 'Phone number format is not valid'
   }
-] 
+],
+
+selected: [
+  {
+    validator: validateSelected,
+    message: 'Select a value'
+  }
+]
+
 };
 
 export const validateValuesByRule = (rules) => (values) => {

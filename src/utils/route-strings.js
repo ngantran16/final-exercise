@@ -3,6 +3,8 @@ const tableRoutes = {
   registration: '/registration',
   confirm: '/confirm',
   information: '/information',
+  search: '/search',
+  contact: '/contact',
 };
 
 export default tableRoutes;

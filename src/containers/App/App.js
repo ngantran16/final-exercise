@@ -9,13 +9,14 @@ import Intro from '../Intro/Intro';
 import Register from '../Register/Register';
 import ConfirmOTP from '../Register/ConfirmOTP';
 import Info from '../Info/Info';
+import Search from '../Map/Search';
 import tableRoutes from '../../utils/route-strings';
-import history from './history';
+import Contact from '../../containers/Contact/Contact';
 
 function App() {
   return (
     <div>
-      <Router history={history}>
+      <Router>
         <Switch>
           <Route path={tableRoutes.registration}>
             <Register />
@@ -25,6 +26,12 @@ function App() {
           </Route>
           <Route path={tableRoutes.confirm}>
             <ConfirmOTP />
+          </Route>
+          <Route path={tableRoutes.search}>
+            <Search />
+          </Route>
+          <Route path={tableRoutes.contact}>
+            <Contact />
           </Route>
           <Route path={tableRoutes.home}>
             <Intro />

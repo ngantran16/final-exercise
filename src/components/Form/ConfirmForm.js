@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import Images from '../../themes/Images';
 import './Form.scss';
@@ -9,6 +10,7 @@ const ConfirmForm = () => {
     const [num2, setNum2] = useState('');
     const [num3, setNum3] = useState('');
     const [num4, setNum4] = useState('');
+    const history = useHistory();
 
     const response = useSelector((state) => state.register.response);
     response && console.log('1111111111111' + response.otp);
@@ -18,6 +20,7 @@ const ConfirmForm = () => {
         console.log(response);
         if (response && (response.otp === otp)) {
             alert('Register successfull!');
+            history.push('/information');
         } else {
             alert('The OTP not match!');
         }
