@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import createSagaMiddleware from 'redux-saga'
-
 import App from './containers/App/App';
 import reducer from './redux/reducers';
 import mySaga from './redux/sagas';

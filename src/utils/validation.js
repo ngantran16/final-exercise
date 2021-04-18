@@ -6,6 +6,9 @@ export const validatePhoneNumber = (value) => phoneRegExp.test(value);
 
 export const validateSelected = (value) => value !== '';
 
+export const validateCheckbox = (value) => value = true;
+
+
 export const validationRules = {
 required: [
     {
@@ -25,6 +28,13 @@ selected: [
   {
     validator: validateSelected,
     message: 'Select a value'
+  }
+],
+
+checkbox: [
+  {
+    validator: validateCheckbox,
+    message: 'You have to agree with the Terms'
   }
 ]
 

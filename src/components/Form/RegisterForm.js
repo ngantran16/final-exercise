@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import classNames from 'classnames';
 import { useHistory } from 'react-router-dom';
@@ -17,10 +17,12 @@ const RegisterForm = () => {
     const formik = useFormik({
         initialValues: {
           phone: '',
+          checkTerm: false,
         },
         validate: (values) => {
           return validateValuesByRule({
-            phone: validationRules.phoneNumber
+            phone: validationRules.phoneNumber,
+            checkTerm: validationRules.checkbox
           })(values);
         },
         onSubmit: (values, actions) => {
@@ -29,6 +31,9 @@ const RegisterForm = () => {
           history.push('/confirm');
         }
       });
+
+      const [isChecked, setIsChecked] = useState(false);
+      console.log(isChecked);
 
     return (
       <form
@@ -55,12 +60,29 @@ const RegisterForm = () => {
               </div>
           </div>
           <div>
-          <p>
-            <label className="checkbox-inline">
-                <input type="checkbox" />&nbsp;
-                Agree Terms and Conditions
-            </label>
-          </p>
+          <div className={classNames({
+              'form-group': true,
+              'has-error': formik.touched.checkTerm && formik.errors.checkTerm
+              })}>
+            <p>
+              <label className="checkbox-inline">
+                  <input 
+                    type="checkbox"
+                    id="checkTerm"
+                    defaultChecked={isChecked}
+                    // onChange={()=>setIsChecked(true)}
+                    onBlur={formik.handleBlur}
+                    onChange={formik.handleChange}
+                  />&nbsp;
+                  Agree Terms and Conditions
+              </label>
+              {formik.touched.checkTerm && formik.errors.checkTerm && (
+                  <span className="help-block">
+                  {formik.errors.checkTerm}
+                  </span>
+                  )}
+            </p>
+          </div>
           </div>
 
           <div className="submit-button">

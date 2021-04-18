@@ -15,7 +15,7 @@ const Header = () => {
                 <div className="dropdown">
                     <img src={ Images.menuIcon } alt="menu-icon" className="menu-icon" />
                     <div className="dropdown-content">
-                        <a href="reactjs.org"><FaHome color="#888888" /><span>Home</span></a>
+                        <a href="/"><FaHome color="#888888" /><span>Home</span></a>
                         <a href="reactjs.org"><FaUserCircle color="#888888" /><span>Profile</span></a>
                         <a href="reactjs.org"><FaCartPlus color="#888888" /><span>Your Book</span></a>
                         <a href="reactjs.org"><FaStar color="#888888" /><span>Favourites</span></a>

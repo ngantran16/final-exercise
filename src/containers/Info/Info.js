@@ -1,6 +1,7 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import classNames from 'classnames';
+import { useHistory } from 'react-router-dom';
 
 import './Info.scss';
 import Header from '../../components/Header/Header';
@@ -12,6 +13,7 @@ import {
 } from '../../utils/validation';
 
 const Info = () => {
+    const history = useHistory();
     const formik = useFormik({
         initialValues: {
           name: '',
@@ -22,10 +24,7 @@ const Info = () => {
           })(values);
         },
         onSubmit: (values, actions) => {
-          setTimeout(() => {
-            actions.setSubmitting(false);
-            alert(JSON.stringify(values, null, 2));
-          }, 400);
+            history.push('/search');
         }
       });
 

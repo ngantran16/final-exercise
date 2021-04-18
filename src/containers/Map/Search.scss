@@ -1,0 +1,37 @@
+.map {
+    width: 100vw;
+    height: 85vh;
+}
+
+.leaflet-control-geosearch form input {
+    min-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    height: 30px;
+    border-radius: 0 4px 4px 0;
+    text-indent: 8px;
+}
+
+.leaflet-control-geosearch form {
+    position: absolute;
+    left: -25vw;
+    width: 35vw;
+    border-radius: 0 4px 4px 0;
+    border: 2px solid #fff;
+    border-left: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    z-index: 1;
+    height: auto;
+    padding: 0 8px;
+  }
+
+.leaflet-control-geosearch.active form {
+    display: block;
+  }
+  
+  
